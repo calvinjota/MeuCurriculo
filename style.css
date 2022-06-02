@@ -140,30 +140,33 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
     opacity: 0;
     visibility: hidden;
     transition: 400ms ease-in-out 0s;
 }
 
+
+
 .menu-items ul {
     list-style-type: none;
+
 }
 
-.menu-items ul li a{
+/*.menu-items ul li a{
     margin: 10px 0;
     color: #2E1C2B;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 4px;
     font-size: 40px;
-}
+}*/
 
 /* ANIMAÇÃO DO MENU */
 
 #toggle:checked + .checkbox .trace:nth-child(1) {
     transform: rotate(45deg);
-    background-color: rgba(43,83,130,1);
+    background-color: #2E1C2B;
     top: 47px;
 }
 
@@ -176,7 +179,7 @@ a:hover {
 
 #toggle:checked + .checkbox .trace:nth-child(3) {
     transform: rotate(-45deg);
-    background-color: rgba(43,83,130,1);
+    background-color: #2E1C2B;
     top: 48px;
 }
 
@@ -185,7 +188,7 @@ a:hover {
 }
 
 #toggle:checked ~ .menu{
-    box-shadow: 0px 0px 0px 250vmax;
+    box-shadow: 0px 0px 0px 40vmax white;
     z-index: 1;
 }
 
@@ -217,7 +220,8 @@ a:hover {
     height: 300px;
     width: 400px;
     margin: 3rem 0 0 0;
-    background-color: black;
+    background-image: url("./code.png");
+    border-radius: 25px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -225,7 +229,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     filter: grayscale(0.5);
-    color: white;
+    color: rgb(214, 214, 214);
     cursor: pointer;
     transition: 0.3s;
 }
@@ -234,7 +238,11 @@ a:hover {
     width: 40%;
     font-family: sans-serif;
     letter-spacing: 1px;
-    color: rgb(109, 109, 109);
+    color: rgb(0, 0, 0);
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
 }
 
 .card-wrapper {
@@ -252,9 +260,11 @@ a:hover {
     height: 100px;
     width: 100px;
     display: block;
-    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.096);
+    border: 1px solid rgba(255, 255, 255, 0.329);
+    border-radius: 25px;
     opacity: 0;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .card-wrapper h2 {
@@ -276,6 +286,7 @@ a:hover {
 
 .card:hover {
     filter: unset;
+    color: #eafaff;
 }
 
 .card:hover > .card-wrapper::before {
@@ -302,7 +313,9 @@ a:hover {
     justify-content: center;
     align-items: center;
     animation: backgroundTransition 8s ease-in-out infinite;
-    position: relative;  
+    position: relative;
+    font-family: sans-serif;
+    font-size: 12px;
 }
 
 @media (max-width: 800px) {
