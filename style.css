@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Tamil:ital@1&display=swap');
 
 body {
     margin: 0;
     padding: 0;
     color: #ffffff;
     font-family: 'amatic sc', sans-serif;
+    background-color: rgb(25, 31, 41);
+    background: radial-gradient(rgb(18, 38, 59), rgb(0, 0, 0));
+    box-shadow: 0px 985px 10px rgb(0, 0, 0) inset;
+    
 }
 
 /* HEADER */
@@ -120,21 +125,21 @@ a:hover {
 
 .menu {
     position: absolute;
-    top: 28px;
-    right: 30px;
+    top: 47px;
+    right: 48px;
     background: transparent;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 0px 0px white;
+    height: 4px;
+    width: 4px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 0px 0px rgba(97, 155, 230, 0.356);
     z-index: -1;
-    transition: 400ms ease-in-out 0s;
+    transition: 200ms ease-in-out 0s;
 }
 
 .menu-items {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -295px;
+    right: -710px;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -143,30 +148,40 @@ a:hover {
     z-index: 2;
     opacity: 0;
     visibility: hidden;
-    transition: 400ms ease-in-out 0s;
+    transition: 200ms ease-in-out 0s;
+    
 }
-
-
 
 .menu-items ul {
     list-style-type: none;
+    border: 2px solid black;
+    padding: 15px;
 
 }
 
-/*.menu-items ul li a{
+.menu-items ul a{
     margin: 10px 0;
-    color: #2E1C2B;
+    color: #000000;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 4px;
     font-size: 40px;
-}*/
+}
+
+.menu-items h1 {
+    font-size: 30px;
+}
+
+.menu-items ul a:hover {
+    color: #F00;
+    background: none;
+}
 
 /* ANIMAÇÃO DO MENU */
 
 #toggle:checked + .checkbox .trace:nth-child(1) {
     transform: rotate(45deg);
-    background-color: #2E1C2B;
+    background-color: rgb(0, 0, 0);
     top: 47px;
 }
 
@@ -179,16 +194,16 @@ a:hover {
 
 #toggle:checked + .checkbox .trace:nth-child(3) {
     transform: rotate(-45deg);
-    background-color: #2E1C2B;
+    background-color: rgb(0, 0, 0);
     top: 48px;
 }
 
 #toggle:checked + .checkbox {
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #toggle:checked ~ .menu{
-    box-shadow: 0px 0px 0px 40vmax white;
+    box-shadow: 0px 0px 0px 18vmax rgba(64, 97, 124, 0.356);
     z-index: 1;
 }
 
@@ -228,21 +243,32 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: grayscale(0.5);
+    filter: grayscale(0.8);
     color: rgb(214, 214, 214);
-    cursor: pointer;
     transition: 0.3s;
+    opacity: 65%;
 }
 
 .card-text {
     width: 40%;
-    font-family: sans-serif;
+    font-family: 'Tiro Tamil', serif;
+    font-size: 18px;
     letter-spacing: 1px;
-    color: rgb(0, 0, 0);
-    border: 2px solid black;
+    color: rgb(255, 255, 255);
     border-radius: 20px;
+    background: rgba(29, 29, 29, 0.363);
+    box-shadow: 0px 2px 7px rgba(255, 255, 255, 0.9);
     padding: 10px;
     text-align: center;
+}
+
+.card-text a {
+    text-decoration: none;
+}
+
+.card-text a:hover {
+    color: #F00;
+    background: none;
 }
 
 .card-wrapper {
@@ -254,45 +280,38 @@ a:hover {
     position: relative;
 }
 
-.card-wrapper::before {
-    content: '';
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    display: block;
-    background-color: rgba(0, 0, 0, 0.096);
-    border: 1px solid rgba(255, 255, 255, 0.329);
-    border-radius: 25px;
-    opacity: 0;
+.card-wrapper h2 {
+    font-family: 'Tiro Tamil', serif;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin: 0;
     transition: 0.5s;
 }
 
-.card-wrapper h2 {
-    font-size: 40px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin: 0;
-    transition: 0.3s;
+.card-wrapper a {
+    background: transparent;
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+
 }
 
 .card-wrapper p {
+    font-family:"Courier New", Courier, monospace;
     font-size: 0;
     visibility: hidden;
     opacity: 0;
     font-weight: bold;
     text-transform: uppercase;
-    transition: 0.3s;
+    letter-spacing: 1px;
+    transition: 0.5s;
 }
 
 .card:hover {
-    filter: unset;
-    color: #eafaff;
-}
-
-.card:hover > .card-wrapper::before {
-    height: 250px;
-    width: 350px;
-    opacity: 1;
+    filter: grayscale(25%);
+    opacity: 100%;
+    color: #ffffff;
+    box-shadow: 0 0 1em rgb(255, 255, 255);
 }
 
 .card:hover > .card-wrapper p {
@@ -304,8 +323,8 @@ a:hover {
 /* FOOTER */
 
 .footer {
-    width: 100%;
-    height: 100px;
+    width: 100vw;
+    height: 50px;
     background: radial-gradient(circle, rgba(43,83,130,1) 0%, rgb(20, 20, 20) 90%);
     background-size: 400% 400%;
     display: flex;
@@ -316,6 +335,7 @@ a:hover {
     position: relative;
     font-family: sans-serif;
     font-size: 12px;
+    box-shadow: 0px -10px 10px rgb(0, 0, 0);
 }
 
 @media (max-width: 800px) {
